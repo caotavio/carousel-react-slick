@@ -1,0 +1,135 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.App {
+  width: 70%;
+  margin: 10rem auto;
+  height: 570px;
+  overflow: hidden;
+  /* fixed height and / or same image size will help the arrows not to bounce around */
+}
+
+.slide img {
+  width: 17rem;
+  margin: 0 auto;
+}
+
+.slide {
+  transition: transform 300ms;
+  opacity: 0.5;
+}
+
+.activeSlide {
+  opacity: 1;
+}
+
+.slideLeft {
+  -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
+  mask-image: linear-gradient(to left, black 70%, transparent 100%);
+}
+
+.slideRight {
+  -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+  mask-image: linear-gradient(to right, black 70%, transparent 100%);
+}
+
+.arrow {
+  background-color: #fff;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrowDisabled {
+  color: #D3D3D3;
+  pointer-events: none;
+}
+
+.arrow svg {
+  transition: color 300ms;
+}
+
+.arrow svg:hover {
+  color: #00a8e0;
+}
+
+.arrowDisabled svg:hover {
+  color: #A9A9A9;
+}
+
+.next {
+  right: 0%;
+  top: 50%;
+}
+
+.prev {
+  left: 0%;
+  top: 50%;
+}
+
+.noSlide {
+  display: none!important;
+}
+
+.customDots {
+  background-color: #A9A9A9;
+  color: #A9A9A9;
+}
+
+.slick-active .customDots {
+  background-color: #00a8e0;
+  color: #00a8e0;
+}
+
+@media only screen 
+  and (max-device-width: 810px) {
+
+    .slide img {
+      width: 100%;
+    }
+
+    .slideLeft {
+      float: right;
+      -webkit-mask-image: linear-gradient(to left, black 10%, transparent 100%);
+      mask-image: linear-gradient(to left, black 10%, transparent 100%);
+    }
+    
+    .slideRight {
+      -webkit-mask-image: linear-gradient(to right, black 10%, transparent 100%);
+      mask-image: linear-gradient(to right, black 10%, transparent 100%);
+    }
+
+    .next {
+      right: 10%;
+    }
+    
+    .prev {
+      left: 10%;
+    }
+}
+
+@media only screen 
+  and (max-device-width: 480px) {
+
+    .slide {
+      opacity: 1;
+    }
+
+    .slideLeft {
+      width: 100% !important;
+      -webkit-mask-image: linear-gradient(to left, black 0%, transparent 30%);
+      mask-image: linear-gradient(to left, black 0%, transparent 30%);
+      margin-right: 1rem;
+    }
+
+    .slideLeft img {
+      margin-right: 1rem;
+    }
+    
+    .slideRight {
+      width: 100% !important;
+      -webkit-mask-image: linear-gradient(to right, black 0%, transparent 30%);
+      mask-image: linear-gradient(to right, black 0%, transparent 30%);
+      margin-left: 1rem;
+    }
+}
